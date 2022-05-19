@@ -191,8 +191,6 @@ python-dateutil==2.8.2
 pytz==2019.1
 pytz-deprecation-shim==0.1.0.post0
 pyvis==0.1.9
-pywin32==223
-pywinpty==0.5.5
 PyYAML==5.1.1
 pyzmq==23.0.0
 QtAwesome==0.5.7
