@@ -76,22 +76,44 @@ with mp_objectron.Objectron(static_image_mode=True,
               mp_drawing.draw_landmarks(
                   annotated_image, detected_object.landmarks_2d, mp_objectron.BOX_CONNECTIONS)
 
-              print(x_width)
-              print(y_height)
-              height_shoe = abs(detected_object.landmarks_2d.landmark[2].y - detected_object.landmarks_2d.landmark[4].y)
-              height_shoe_pixels = height_shoe * y_height
-              height_shoe_cm = ((distance * height_shoe_pixels * sensor_height_y) / (focal_length_camera * y_height))
-              print('h', height_shoe_cm)
-              pixels_per_metric_y = height_shoe_pixels / height_shoe_cm
+              if(str(option) == "Cup" or "Camera" or "Chair"):
 
-              length_shoe = abs(detected_object.landmarks_2d.landmark[2].x - detected_object.landmarks_2d.landmark[6].x)
-              length_shoe_pixels = length_shoe * x_width
-              length_shoe_cm = ((distance * length_shoe_pixels * sensor_height_x) / (focal_length_camera * x_width))
-              print(length_shoe_cm)
 
-              width_shoe = abs(detected_object.landmarks_2d.landmark[2].y - detected_object.landmarks_2d.landmark[1].y)
+                  height_shoe = abs(detected_object.landmarks_2d.landmark[2].y - detected_object.landmarks_2d.landmark[4].y)
+                  height_shoe_pixels = height_shoe * y_height
+                  height_shoe_cm = ((distance * height_shoe_pixels * sensor_height_y) / (focal_length_camera * y_height))
+                  print('h', height_shoe_cm)
+                  pixels_per_metric_y = height_shoe_pixels / height_shoe_cm
 
-              width_shoe_cm = (width_shoe * y_height) / pixels_per_metric_y
+                  length_shoe = abs(detected_object.landmarks_2d.landmark[2].x - detected_object.landmarks_2d.landmark[6].x)
+                  length_shoe_pixels = length_shoe * x_width
+                  length_shoe_cm = ((distance * length_shoe_pixels * sensor_height_x) / (focal_length_camera * x_width))
+                  print(length_shoe_cm)
+
+                  width_shoe = abs(detected_object.landmarks_2d.landmark[2].y - detected_object.landmarks_2d.landmark[1].y)
+
+                  width_shoe_cm = (width_shoe * y_height) / pixels_per_metric_y
+
+              if(str(option) == "Shoe"):
+
+                  height_shoe = abs(
+                      detected_object.landmarks_2d.landmark[5].y - detected_object.landmarks_2d.landmark[7].y)
+                  height_shoe_pixels = height_shoe * y_height
+                  height_shoe_cm = (
+                              (distance * height_shoe_pixels * sensor_height_y) / (focal_length_camera * y_height))
+                  print('h', height_shoe_cm)
+                  pixels_per_metric_y = height_shoe_pixels / height_shoe_cm
+
+                  length_shoe = abs(
+                      detected_object.landmarks_2d.landmark[6].x - detected_object.landmarks_2d.landmark[7].x)
+                  length_shoe_pixels = length_shoe * x_width
+                  length_shoe_cm = ((distance * length_shoe_pixels * sensor_height_x) / (focal_length_camera * x_width))
+                  print(length_shoe_cm)
+
+                  width_shoe = abs(
+                      detected_object.landmarks_2d.landmark[2].y - detected_object.landmarks_2d.landmark[6].y)
+
+                  width_shoe_cm = (width_shoe * y_height) / pixels_per_metric_y
 
               annotated_image[665:, :] = [
                   14, 49, 88  #BGR -> RGB
