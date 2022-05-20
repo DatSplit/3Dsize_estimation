@@ -32,13 +32,13 @@ sensor_height_x = 3.6
 x_width = 1280
 y_height = 720
 
-image2 = st.file_uploader('Upload an image containing a ' + str(option), help="Upload image containing a Cup with size (1280 x 720)", type=['png','jpg'])
+image2 = st.file_uploader('Upload an image containing a ' + str(option), help="Upload image containing a Cup with size", type=['png','jpg'])
 
 
 mp_drawing = mp.solutions.drawing_utils
 mp_objectron = mp.solutions.objectron
 
-logo = cv2.imread('logo_wit.png")
+logo = cv2.imread("logo_wit.png")
 logo = cv2.resize(logo, (264, 57),
                   interpolation=cv2.INTER_CUBIC)  # 528,114
 
