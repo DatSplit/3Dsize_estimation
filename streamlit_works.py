@@ -1,20 +1,9 @@
 import streamlit as st
-import time
 import numpy as np
-import cv2
-import numpy as np
-import os
-from PIL import Image
-from scipy.spatial import distance as dist
-import imutils
-from imutils import perspective
-from imutils import contours
-import numpy as np
-import argparse
 import mediapipe as mp
 import cv2
 from PIL import Image
-from matplotlib import pyplot as plt
+
 
 logo2 = cv2.imread(r'C:\Users\niels\Downloads\dlier.png').all()
 print((logo2))
