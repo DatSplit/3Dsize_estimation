@@ -1,27 +1,16 @@
 import streamlit as st
-import time
 import numpy as np
-import cv2
-import numpy as np
-import os
-from PIL import Image
-from scipy.spatial import distance as dist
-import imutils
-from imutils import perspective
-from imutils import contours
-import numpy as np
-import argparse
 import mediapipe as mp
 import cv2
 from PIL import Image
-from matplotlib import pyplot as plt
 
-logo2 = cv2.imread(r'C:\Users\niels\Downloads\dlier.png').all()
+
+logo2 = cv2.imread('dlier.png').all()
 print((logo2))
 st.set_page_config(page_icon = logo2,page_title="3D size estimation" )
 
 # streamlit run C:\Users\niels\PycharmProjects\streamlit_test\streamlit_works.py
-logo = cv2.imread(r'C:\Users\niels\Downloads\datalier_logo.png')
+logo = cv2.imread('datalier_logo.png')
 logo = cv2.cvtColor(logo,cv2.COLOR_BGR2RGB)
 
 st.image(logo)
@@ -49,7 +38,7 @@ image2 = st.file_uploader('Upload an image containing a ' + str(option), help="U
 mp_drawing = mp.solutions.drawing_utils
 mp_objectron = mp.solutions.objectron
 
-logo = cv2.imread(r"C:\Users\niels\Downloads\logo_wit.png")
+logo = cv2.imread('logo_wit.png")
 logo = cv2.resize(logo, (264, 57),
                   interpolation=cv2.INTER_CUBIC)  # 528,114
 
