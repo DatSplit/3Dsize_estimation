@@ -21,8 +21,10 @@ option = st.selectbox(
 'Which object would you like to identify and measure?',
 ('Cup', 'Chair', 'Shoe', 'Camera'))
 
-distance = 1
+
 distance = st.number_input('What is the distance to the object in (mm)?')
+if(distance == 0):
+    st.error('Please enter a number.')
 #x_width = st.number_input('Please enter the width of the image in pixels.')
 #y_height = st.number_input('Please enter the height of the image in pixels.')
 #distance = 300 #mm
